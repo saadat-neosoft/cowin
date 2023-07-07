@@ -1,0 +1,36 @@
+.last-updated {
+  background: #e0f2f1;
+
+  &__content {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      &__text {
+        color: #000;
+        font-style: italic;
+        font-size: 12px;
+        font-weight: 400;
+      }
+    }
+
+    &__right {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      font-size: 14px;
+      color: #000;
+      text-align: right;
+
+      > span {
+        font-weight: bolder;
+      }
+    }
+  }
+}

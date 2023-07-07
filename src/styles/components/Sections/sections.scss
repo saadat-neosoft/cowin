@@ -1,0 +1,10 @@
+.sections {
+  background-color: #f4f6f9;
+  padding: 71px 0;
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+}

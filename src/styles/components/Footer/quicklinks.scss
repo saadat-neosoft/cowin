@@ -1,0 +1,35 @@
+.quicklinks {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    color: #99d9d9;
+    text-transform: uppercase;
+    margin-bottom: 22px;
+    padding-bottom: 10px;
+
+    &::after {
+      content: "";
+      display: block;
+      border-bottom: 5px solid #99d9d9;
+      width: 22px;
+      position: relative;
+      bottom: -10px;
+    }
+  }
+
+  &__items {
+    color: #fff;
+    font-size: 12px;
+    font-weight: 300;
+    cursor: pointer;
+    margin-bottom: 16px;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

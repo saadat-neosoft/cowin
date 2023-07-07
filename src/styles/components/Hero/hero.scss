@@ -1,0 +1,81 @@
+.hero {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0;
+    gap: 25px;
+
+    &__card {
+      padding-top: 20px;
+      //   padding-bottom: 20px;
+      box-shadow: 0 0 4px rgba(218, 218, 241, 0.49);
+      border-radius: 10px;
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+
+      &__details {
+        display: flex;
+        gap: 20px;
+        padding-left: 20px;
+
+        &__img-container {
+          background: #fff;
+          width: 55px;
+          height: 55px;
+          border-radius: 100%;
+          margin: 0 auto;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          box-shadow: 0 5px 10px #eee, 0 3px 3px #999;
+        }
+
+        &__info {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          align-items: center;
+
+          &__top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 212px;
+          }
+
+          &__title {
+            font-size: 12px;
+            font-weight: 500;
+            color: #24263b;
+            text-transform: uppercase;
+          }
+
+          &__num {
+            color: #24263b;
+            font-size: 20px;
+            font-weight: 600;
+            align-self: flex-start;
+          }
+        }
+
+        &__day {
+          background: rgba(0, 0, 0, 0.1);
+          padding: 0 8px;
+          display: inline-flex;
+          align-items: center;
+
+          border-radius: 5px;
+          border-bottom-right-radius: 0;
+          border-top-right-radius: 0;
+
+          height: 20px;
+
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}
