@@ -121,10 +121,6 @@ const Section2LineChart = () => {
         },
         display: true,
 
-        // title: {
-        //   display: true,
-        //   text: "Number of Vaccinations",
-        // },
         grid: {
           color: "#00000005",
         },
@@ -136,19 +132,6 @@ const Section2LineChart = () => {
           usePointStyle: true, // Use circular legend point style
         },
         position: "bottom",
-      },
-      tooltip: {
-        // callbacks: {
-        //   label: (context) => {
-        //     const label = context.dataset.label || "";
-        //     const value1 = context.parsed.y || "";
-        //     const value2 =
-        //       context.datasetIndex === 0
-        //         ? vaccinations2[context.dataIndex]
-        //         : vaccinations1[context.dataIndex];
-        //     return `${value1} ${value2}`;
-        //   },
-        // },
       },
     },
     maintainAspectRatio: false,

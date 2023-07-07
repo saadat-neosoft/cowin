@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/static/css/main.460d9373.css",
+    "main.js": "/static/js/main.472897f7.js",
+    "static/media/emblem-gov.svg": "/static/media/emblem-gov.5dd16a82bf57bb75118e14f5fe0c0c2d.svg",
+    "static/media/national-health-authority.jpg": "/static/media/national-health-authority.d409d88f75baa838e3f4.jpg",
+    "static/media/site-conducting-vaccination-icon.svg": "/static/media/site-conducting-vaccination-icon.f2e60b2f99854a731e771d5b4b94264b.svg",
+    "static/media/undp-logo-vertical.svg": "/static/media/undp-logo-vertical.bf831a9a4f3c99d8b581943f826257e0.svg",
+    "static/media/total-registrations-icon.svg": "/static/media/total-registrations-icon.086b0aefdb22fffa728d758a347ac58a.svg",
+    "static/media/total-vaccination-doses-icon.svg": "/static/media/total-vaccination-doses-icon.99715cd6017b7a5f775f14ee35b0c29b.svg",
+    "static/media/new-logo.svg": "/static/media/new-logo.daa7b48adf6732f74e3e38456d13f1bf.svg",
+    "static/media/registrations-today-icon.svg": "/static/media/registrations-today-icon.58f30deb653c2b240c3593be5b910929.svg",
+    "static/media/60plus-icon.svg": "/static/media/60plus-icon.259f5364b497ac002a66d6d87c402fce.svg",
+    "static/media/fully-vaccinated-today-icon.svg": "/static/media/fully-vaccinated-today-icon.0082c8c195d82bca646a6437f48aa012.svg",
+    "static/media/partially-vaccinated-today-icon.svg": "/static/media/partially-vaccinated-today-icon.503de6401a656ca040c3b45c4026074b.svg",
+    "static/media/vaccination-today-icon.svg": "/static/media/vaccination-today-icon.714dfbf90b93a61fdb9ba3af5626fadd.svg",
+    "static/media/12-14-age-icon.svg": "/static/media/12-14-age-icon.b956199fc6dff36bafe95b1cd5a1294a.svg",
+    "static/media/18-59-precaution-dose-icon.svg": "/static/media/18-59-precaution-dose-icon.b956199fc6dff36bafe95b1cd5a1294a.svg",
+    "static/media/15-17-vaccination-icon.svg": "/static/media/15-17-vaccination-icon.537144be5e7a7bc1781a571c53e74479.svg",
+    "index.html": "/index.html",
+    "main.460d9373.css.map": "/static/css/main.460d9373.css.map",
+    "main.472897f7.js.map": "/static/js/main.472897f7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.460d9373.css",
+    "static/js/main.472897f7.js"
+  ]
+}
