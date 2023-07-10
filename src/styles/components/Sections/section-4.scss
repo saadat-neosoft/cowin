@@ -23,9 +23,36 @@
     display: flex;
 
     &__left {
-      > img {
-        width: 550px;
-        height: 550px;
+      width: 80%;
+      // height: 550px;
+      // > img {
+      //   width: 550px;
+      //   height: 550px;
+      // }
+
+      &__tooltip {
+        position: absolute;
+        z-index: 1;
+        visibility: visible;
+        cursor: default;
+        background: white;
+        // opacity: 1;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid #5439fc;
+        background-color: hsla(0, 0%, 100%, 0.9);
+
+        &__title-1 {
+          font-size: 12px;
+          font-weight: bolder;
+          margin-bottom: 8px;
+        }
+        &__title-2 {
+          font-size: 12px;
+          font-weight: bolder;
+          color: #d4d4d4;
+          margin-bottom: 6px;
+        }
       }
     }
 

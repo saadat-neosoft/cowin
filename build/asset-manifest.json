@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.460d9373.css",
-    "main.js": "/static/js/main.472897f7.js",
+    "main.css": "/static/css/main.5f879f87.css",
+    "main.js": "/static/js/main.74eb91cf.js",
     "static/media/emblem-gov.svg": "/static/media/emblem-gov.5dd16a82bf57bb75118e14f5fe0c0c2d.svg",
+    "static/media/india map.png": "/static/media/india map.58088d8e864696fc8817.png",
     "static/media/national-health-authority.jpg": "/static/media/national-health-authority.d409d88f75baa838e3f4.jpg",
     "static/media/site-conducting-vaccination-icon.svg": "/static/media/site-conducting-vaccination-icon.f2e60b2f99854a731e771d5b4b94264b.svg",
     "static/media/undp-logo-vertical.svg": "/static/media/undp-logo-vertical.bf831a9a4f3c99d8b581943f826257e0.svg",
@@ -18,11 +19,11 @@
     "static/media/18-59-precaution-dose-icon.svg": "/static/media/18-59-precaution-dose-icon.b956199fc6dff36bafe95b1cd5a1294a.svg",
     "static/media/15-17-vaccination-icon.svg": "/static/media/15-17-vaccination-icon.537144be5e7a7bc1781a571c53e74479.svg",
     "index.html": "/index.html",
-    "main.460d9373.css.map": "/static/css/main.460d9373.css.map",
-    "main.472897f7.js.map": "/static/js/main.472897f7.js.map"
+    "main.5f879f87.css.map": "/static/css/main.5f879f87.css.map",
+    "main.74eb91cf.js.map": "/static/js/main.74eb91cf.js.map"
   },
   "entrypoints": [
-    "static/css/main.460d9373.css",
-    "static/js/main.472897f7.js"
+    "static/css/main.5f879f87.css",
+    "static/js/main.74eb91cf.js"
   ]
 }

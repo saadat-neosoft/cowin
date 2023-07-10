@@ -4,9 +4,12 @@ import "../../../styles/components/Sections/section-4.scss";
 
 import indiaMap from "../../../assets/india map.png";
 import Section4DonutChart from "./Section4DonutChart";
+import SampleMap from "../../Maps/SampleMap";
 
 const Section4 = () => {
   const [states, setStates] = useState();
+  const [isVisible, setIsVisible] = useState(false);
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -35,8 +38,48 @@ const Section4 = () => {
     <div className="section-4">
       <span className="section-4__title">Vaccination Coverage by State/UT</span>
       <div className="section-4__charts">
-        <div className="section-4__charts__left">
-          <img src={indiaMap} alt="" />
+        <div
+          className="section-4__charts__left"
+          style={{ position: "relative" }}
+        >
+          {/* <img src={indiaMap} alt="" />
+           */}
+          <SampleMap
+            setIsVisible={setIsVisible}
+            setTooltipPosition={setTooltipPosition}
+          />
+          <div
+            className="section-4__charts__left__tooltip"
+            style={{
+              visibility: isVisible ? "visible" : "hidden",
+              position: "absolute",
+              left: tooltipPosition.x,
+              top: tooltipPosition.y - 60,
+            }}
+          >
+            <div className="section-4__charts__left__tooltip__title-1">
+              Andhra Pradesh
+            </div>
+
+            <div className="section-4__charts__left__tooltip__title-2">
+              Dose One
+            </div>
+            <div className="section-4__charts__left__tooltip__title-1">
+              4,47,04,406
+            </div>
+            <div className="section-4__charts__left__tooltip__title-2">
+              Dose Two
+            </div>
+            <div className="section-4__charts__left__tooltip__title-1">
+              3,53,285
+            </div>
+            <div className="section-4__charts__left__tooltip__title-2">
+              Precaution Dose
+            </div>
+            <div className="section-4__charts__left__tooltip__title-1">
+              2,90,363
+            </div>
+          </div>
         </div>
         <div className="section-4__charts__middle"></div>
         <div className="section-4__charts__right">
