@@ -1,16 +1,20 @@
 import "../../styles/components/Sections/section-1.scss";
-import Section1Card1 from "./Section1Card1";
-
 import card1 from "../../assets/total-vaccination-doses-icon.svg";
 import card2 from "../../assets/site-conducting-vaccination-icon.svg";
 import card3 from "../../assets/total-registrations-icon.svg";
 import { useEffect, useState } from "react";
-import Section1Card2 from "./Section1Card2";
-import Section1Card3 from "./Section1Card3";
+import Section1Card from "./Section1Card";
 
 const Section1 = () => {
   const [data, setData] = useState([]);
-  // const [vaccinationTotal, setVaccinationTotal] = useState(null);
+
+  const [card1Total, setCard1Total] = useState();
+  const [card2Total, setCard2Total] = useState();
+  const [card3Total, setCard3Total] = useState();
+
+  const [card1Stats, setCard1Stats] = useState();
+  const [card2Stats, setCard2Stats] = useState();
+  const [card3Stats, setCard3Stats] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,8 +30,71 @@ const Section1 = () => {
           `https://api.cowin.gov.in/api/v1/reports/v2/getPublicReports?state_id=&district_id=&${formattedDate}`
         );
         const jsonData = await response.json();
-        // console.log(jsonData.topBlock);
+        // console.log(jsonData.topBlock.vaccination.tot_dose_2);
         setData((prevData) => [...prevData, jsonData]);
+
+        setCard1Total(
+          jsonData.topBlock.vaccination.total_doses.toLocaleString("en-IN")
+        );
+        setCard2Total(jsonData.topBlock.sites.total.toLocaleString("en-IN"));
+        setCard3Total(
+          jsonData.topBlock.registration.total.toLocaleString("en-IN")
+        );
+
+        setCard1Stats([
+          {
+            title: "Dose 1",
+            stat: jsonData.topBlock.vaccination.tot_dose_1.toLocaleString(
+              "en-IN"
+            ),
+          },
+          {
+            title: "Dose 2",
+            stat: jsonData.topBlock.vaccination.tot_dose_2.toLocaleString(
+              "en-IN"
+            ),
+          },
+          {
+            title: "Precaution Dose",
+            stat: jsonData.topBlock.vaccination.tot_pd.toLocaleString("en-IN"),
+          },
+        ]);
+        setCard2Stats([
+          {
+            title: "Goverment",
+            stat: jsonData.topBlock.sites.govt.toLocaleString("en-IN"),
+          },
+          {
+            title: "Private",
+            stat: jsonData.topBlock.sites.pvt.toLocaleString("en-IN"),
+          },
+        ]);
+        setCard3Stats([
+          {
+            title: "Age 12-14",
+            stat: jsonData.topBlock.registration.cit_12_14.toLocaleString(
+              "en-IN"
+            ),
+          },
+          {
+            title: "Age 15-17",
+            stat: jsonData.topBlock.registration.cit_15_17.toLocaleString(
+              "en-IN"
+            ),
+          },
+          {
+            title: "Age 18-44",
+            stat: jsonData.topBlock.registration.cit_18_45.toLocaleString(
+              "en-IN"
+            ),
+          },
+          {
+            title: "Age 45+",
+            stat: jsonData.topBlock.registration.cit_45_above.toLocaleString(
+              "en-IN"
+            ),
+          },
+        ]);
       } catch (error) {
         console.log("Error fetching data:", error);
       }
@@ -36,20 +103,32 @@ const Section1 = () => {
     fetchData();
   }, []);
 
-  // useEffect(() => {
-  //   setVaccinationTotal(data[0]?.topBlock.vaccination.total_doses);
-  // }, [data]);
-
   return (
     <div className="section-1">
-      <Section1Card1
+      <Section1Card
         img={card1}
         imgBgColor="#d7e8fc"
         data={data}
-        // vaccinationTotal={vaccinationTotal}
+        title="Total Vaccination Doses"
+        cardStats={card1Stats}
+        cardTotal={card1Total}
       />
-      <Section1Card2 img={card2} imgBgColor="#d0fff1" data={data} />
-      <Section1Card3 img={card3} imgBgColor="#ffebce" data={data} />
+      <Section1Card
+        img={card2}
+        imgBgColor="#d0fff1"
+        data={data}
+        title="Sites Conducting Vaccination"
+        cardStats={card2Stats}
+        cardTotal={card2Total}
+      />
+      <Section1Card
+        img={card3}
+        imgBgColor="#ffebce"
+        data={data}
+        title="Total Registrations"
+        cardStats={card3Stats}
+        cardTotal={card3Total}
+      />
     </div>
   );
 };

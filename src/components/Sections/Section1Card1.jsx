@@ -1,6 +1,6 @@
 import { AiOutlineInfoCircle } from "react-icons/ai";
 
-const Section1Card = ({ img, imgBgColor, data }) => {
+const Section1Card1 = ({ img, imgBgColor, data }) => {
   return (
     <div className="section-1__card">
       <div
@@ -43,4 +43,4 @@ const Section1Card = ({ img, imgBgColor, data }) => {
   );
 };
 
-export default Section1Card;
+export default Section1Card1;
