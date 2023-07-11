@@ -5,11 +5,47 @@ import "../../../styles/components/Sections/section-4.scss";
 import indiaMap from "../../../assets/india map.png";
 import Section4DonutChart from "./Section4DonutChart";
 import SampleMap from "../../Maps/SampleMap";
+import { LevenshteinDistance } from "natural/lib/natural/distance/levenshtein_distance";
 
 const Section4 = () => {
   const [states, setStates] = useState();
   const [isVisible, setIsVisible] = useState(false);
   const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 });
+
+  const [nameOfState, setNameOfState] = useState();
+  const [dose1, setDose1] = useState();
+  const [dose2, setDose2] = useState();
+  const [pd, setPd] = useState();
+
+  const handleHover = (stateName, states) => {
+    // const state = states.filter(
+    //   (item) => item.title.toLowerCase() === stateName.toLowerCase()
+    // );
+
+    const similarityThreshold = 0.8; // Adjust the threshold as needed
+
+    const state = states.filter((item) => {
+      const string1 = item.title.toLowerCase();
+      const string2 = stateName.toLowerCase();
+      const distance = LevenshteinDistance(string1, string2);
+      const similarity =
+        1 - distance / Math.max(string1.length, string2.length);
+      return similarity >= similarityThreshold;
+    });
+    // console.log(state);
+
+    if (state.length > 0) {
+      setNameOfState(state[0].title);
+      setDose1(state[0].partial_vaccinated.toLocaleString("en-IN"));
+      setDose2(state[0].totally_vaccinated.toLocaleString("en-IN"));
+      setPd(state[0].precaution_dose.toLocaleString("en-IN"));
+    } else {
+      setNameOfState("NA");
+      setDose1("NA");
+      setDose2("NA");
+      setPd("NA");
+    }
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -47,6 +83,8 @@ const Section4 = () => {
           <SampleMap
             setIsVisible={setIsVisible}
             setTooltipPosition={setTooltipPosition}
+            handleHover={handleHover}
+            states={states}
           />
           <div
             className="section-4__charts__left__tooltip"
@@ -58,26 +96,26 @@ const Section4 = () => {
             }}
           >
             <div className="section-4__charts__left__tooltip__title-1">
-              Andhra Pradesh
+              {nameOfState}
             </div>
 
             <div className="section-4__charts__left__tooltip__title-2">
               Dose One
             </div>
             <div className="section-4__charts__left__tooltip__title-1">
-              4,47,04,406
+              {dose1}
             </div>
             <div className="section-4__charts__left__tooltip__title-2">
               Dose Two
             </div>
             <div className="section-4__charts__left__tooltip__title-1">
-              3,53,285
+              {dose2}
             </div>
             <div className="section-4__charts__left__tooltip__title-2">
               Precaution Dose
             </div>
             <div className="section-4__charts__left__tooltip__title-1">
-              2,90,363
+              {pd}
             </div>
           </div>
         </div>
@@ -86,6 +124,7 @@ const Section4 = () => {
           {states &&
             states.map((item, index) => (
               <div key={index} className="section-4__charts__right__card">
+                {/* {console.log(states.filter((item) => item))} */}
                 <div className="section-4__charts__right__card__chart">
                   <Section4DonutChart
                     dose1={item.partial_vaccinated}

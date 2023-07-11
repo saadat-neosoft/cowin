@@ -24,7 +24,7 @@ const Section6StackedChart = () => {
           `https://api.cowin.gov.in/api/v1/reports/v2/getVacPublicReports?state_id=&district_id=&date=${formattedDate}`
         );
         const jsonData = await response.json();
-        console.log(jsonData.last30DaysVaccination);
+        // console.log(jsonData.last30DaysVaccination);
 
         setTime(
           jsonData.last30DaysVaccination.map((item) => {
