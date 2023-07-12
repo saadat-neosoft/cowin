@@ -18,7 +18,7 @@ const HeroCard = ({ img, title, num, bg, border, fill }) => {
           <span className="hero__content__card__details__info__num">{num}</span>
         </div>
       </div>
-      <div style={{ height: "40px" }}>
+      <div  className="hero__content__card__container">
         <HeroLineChart border={border} fill={fill}/>
       </div>
     </div>

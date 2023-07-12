@@ -22,6 +22,54 @@
       justify-content: flex-end;
       gap: 20px;
 
+      &__btn {
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+
+        &__menu {
+          position: absolute;
+          left: -138px;
+          bottom: -100px;
+          display: flex;
+          flex-direction: column;
+          text-align: left;
+          // border: 1px solid black;
+          border-radius: 4px;
+          box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+            0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+          background: #fff;
+          min-width: 112px;
+          max-width: 280px;
+          width: 160px;
+
+          &__verify {
+            font-size: 14px;
+            font-weight: 600;
+            color: #002060;
+            padding: 15px 10px;
+            letter-spacing: 1px;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.04);
+            }
+          }
+          &__faq {
+            font-size: 14px;
+            font-weight: 600;
+            color: #002060;
+            padding: 15px 10px;
+            letter-spacing: 1px;
+
+            &:hover {
+              background: rgba(0, 0, 0, 0.04);
+            }
+          }
+        }
+      }
+
       &__verify {
         font-size: 13px;
         text-transform: uppercase;

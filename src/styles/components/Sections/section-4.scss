@@ -152,11 +152,16 @@
     color: #5e676f;
     margin-top: 10px;
     margin-bottom: 15px;
-    padding: 12px 20px;
+    padding: 12px 0px;
   }
 
   &__charts {
     display: flex;
+
+    @media (max-width: 1000px) {
+      flex-direction: column;
+      align-items: center;
+    }
 
     &__left {
       width: 80%;
@@ -205,6 +210,10 @@
         hsla(0, 0%, 100%, 0)
       );
       border-image-slice: 1;
+
+      @media (max-width: 1000px) {
+        display: none;
+      }
     }
 
     &__right {
@@ -214,6 +223,14 @@
       padding-right: 10px;
       overflow-y: scroll;
       //   overflow-x: hidden;
+
+      @media (max-width: 500px) {
+        padding-left: 0px;
+      }
+
+      @media (max-width: 1000px) {
+        overflow-x: scroll;
+      }
 
       &::-webkit-scrollbar {
         width: 3px;
@@ -259,12 +276,19 @@
           &__details {
             display: flex;
             padding: 2px 5px 5px;
+            @media (max-width: 1000px) {
+              gap: 10px;
+            }
 
             &__item {
               display: flex;
               flex-direction: column;
               width: 20%;
               gap: 4px;
+
+              @media (max-width: 1000px) {
+                width: 25%;
+              }
 
               &__title {
                 color: #adadad;
@@ -276,6 +300,10 @@
                 color: #15124a;
                 font-size: 16px;
                 font-weight: 500;
+
+                @media (max-width: 500px) {
+                  font-size: 12px;
+                }
               }
             }
           }

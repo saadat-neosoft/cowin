@@ -1,6 +1,7 @@
 .hero {
   &__content {
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     padding: 20px 0;
     gap: 25px;
@@ -16,10 +17,22 @@
       flex-direction: column;
       gap: 16px;
 
+      &__container {
+        height: 40px;
+
+        @media (max-width: 370px) {
+          width: 293px;
+        }
+      }
+
       &__details {
         display: flex;
         gap: 20px;
         padding-left: 20px;
+
+        @media (max-width: 370px) {
+          padding-left: 0;
+        }
 
         &__img-container {
           background: #fff;

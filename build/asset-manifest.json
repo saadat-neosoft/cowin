@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.d219e72a.css",
-    "main.js": "/static/js/main.79997927.js",
+    "main.js": "/static/js/main.be0af4a7.js",
     "static/media/emblem-gov.svg": "/static/media/emblem-gov.5dd16a82bf57bb75118e14f5fe0c0c2d.svg",
     "static/media/india map.png": "/static/media/india map.58088d8e864696fc8817.png",
     "static/media/national-health-authority.jpg": "/static/media/national-health-authority.d409d88f75baa838e3f4.jpg",
@@ -20,10 +20,10 @@
     "static/media/15-17-vaccination-icon.svg": "/static/media/15-17-vaccination-icon.537144be5e7a7bc1781a571c53e74479.svg",
     "index.html": "/index.html",
     "main.d219e72a.css.map": "/static/css/main.d219e72a.css.map",
-    "main.79997927.js.map": "/static/js/main.79997927.js.map"
+    "main.be0af4a7.js.map": "/static/js/main.be0af4a7.js.map"
   },
   "entrypoints": [
     "static/css/main.d219e72a.css",
-    "static/js/main.79997927.js"
+    "static/js/main.be0af4a7.js"
   ]
 }
