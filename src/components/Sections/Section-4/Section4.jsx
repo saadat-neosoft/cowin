@@ -25,7 +25,7 @@ const Section4 = () => {
 
   const [isFilterClicked, setIsFilterClicked] = useState(false);
 
-  const handleDropdown = async (name, id) => {
+  const handleDropdown = async (id) => {
     // console.log(name, id);
     try {
       const today = new Date();
@@ -91,7 +91,7 @@ const Section4 = () => {
           `https://api.cowin.gov.in/api/v1/reports/v2/getPublicReports?state_id=&district_id=&date=${formattedDate}`
         );
         const jsonData = await response.json();
-        // console.log(jsonData.getBeneficiariesGroupBy.map((item) => item));
+        console.log(jsonData.getBeneficiariesGroupBy.map((item) => item));
         setStates(jsonData.getBeneficiariesGroupBy);
       } catch (error) {
         console.log("Error fetching data:", error);
@@ -136,9 +136,7 @@ const Section4 = () => {
                       <div key={index}>
                         <div
                           className="section-4__floating-menu__container__drop-down__items__item"
-                          onClick={(e) =>
-                            handleDropdown(e.target.innerText, item.id)
-                          }
+                          onClick={() => handleDropdown(item.id)}
                         >
                           {item.title}
                         </div>
@@ -170,6 +168,7 @@ const Section4 = () => {
             setTooltipPosition={setTooltipPosition}
             handleHover={handleHover}
             states={states}
+            activeId={activeId}
           />
           <div
             className="section-4__charts__left__tooltip"
